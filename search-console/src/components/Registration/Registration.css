@@ -1,0 +1,41 @@
+.signUpImage {
+    background-image: url("https://images.pexels.com/photos/5391510/pexels-photo-5391510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .container-signup {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .login-link-signup {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .login-link-signup a {
+    color: #007bff;
+  }
+  
+  .signup-dropdown
+  {
+    cursor: pointer;
+    
+  }
+  
+  #fail-box-1{
+    
+    font-weight: 500;
+    color: rgb(254, 54, 54);
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+
+}

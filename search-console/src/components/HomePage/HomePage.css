@@ -1,0 +1,24 @@
+.signInImage {
+    background-image: url("https://images.pexels.com/photos/5391510/pexels-photo-5391510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .container-signin {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .signup-link-signin {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .signup-link-signin a {
+    color: #007bff;
+  }
+  

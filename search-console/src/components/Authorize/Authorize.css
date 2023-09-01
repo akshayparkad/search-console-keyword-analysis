@@ -1,0 +1,33 @@
+.authorize-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4CAF50; /* Green color */
+    color: white;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    transition: background-color 0.3s ease;
+    margin-left: 1.5%;
+  }
+
+  .authorize-btn:hover {
+    background-color: #45a049; /* Darker green color on hover */
+  }
+
+  .inner-component{
+    margin: 3rem;
+  }
+
+  .authorization-header-box{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+  }
