@@ -67,8 +67,10 @@ function TableOfRecords({ queryDetails, selectedPage, fetchDataClicked}) {
     console.log(queryDetails);
 
     return (
+        <>        
         <div style={{ position: "relative" }}>
-            <div>Table of Records</div>
+
+            <div className="table-of-records">Table of Records</div>
 
             {isLoading ? (
                 <div
@@ -89,9 +91,14 @@ function TableOfRecords({ queryDetails, selectedPage, fetchDataClicked}) {
                     }
                 </>
             )}
+                
 
-            <FindKeywords selectedPage={selectedPage} queryDetails={queryDetails} setMainTable={setMainTable} mainTable={mainTable}/>
+            
         </div>
+        <>
+        <FindKeywords selectedPage={selectedPage} queryDetails={queryDetails} setMainTable={setMainTable} mainTable={mainTable}/>
+        </>
+        </>
     );
 }
 

@@ -22,7 +22,6 @@ function FindKeywords({ selectedPage, queryDetails, setMainTable, mainTable }) {
     }
 
 
-
     const fetchData = async () => {
 
         try {
@@ -51,7 +50,7 @@ function FindKeywords({ selectedPage, queryDetails, setMainTable, mainTable }) {
                             impression: <span style={{ color: 'darkyellow' }}> {row.impressions}</span>,
                             ctr: row.ctr.toFixed(1),
                             position: row.position.toFixed(1),
-                            keyword: isPresent ? <span style={{ color: 'grey', fontWeight: 'bold' }}>Found</span> : <span style={{ color: 'green', fontWeight: 'bold' }}> Not Found </span>,
+                            keyword: isPresent ? <span style={{ color: '#FA5858', fontWeight: 'bold' }}>Found</span> : <span style={{ color: 'green', fontWeight: 'bold' }}> Not Found </span>,
                         };
                     })
             );
@@ -107,15 +106,17 @@ function FindKeywords({ selectedPage, queryDetails, setMainTable, mainTable }) {
 
     const handleFindKeywords = () => {
         fetchData();
-        setMainTable(!mainTable)
+        setMainTable(false);
     };
 
 
 
     return (
-        <div>
-            <button className="authorize-btn-kw" onClick={handleFindKeywords}>Find Keywords</button>
-            <MDBDataTable bordered small data={data2} />
+        <div className='magic-keyword-set'>
+            <button className="find-keywords-btn-kw" onClick={handleFindKeywords}>Find Magic Keywords</button>
+           { data2 &&
+                < MDBDataTable bordered small data={data2} />
+           } 
         </div>
     )
 }

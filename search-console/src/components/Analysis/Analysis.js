@@ -60,7 +60,7 @@ function Analysis({ setComponent }) {
             ],
         }));
 
-    }, [selectedPage, startDate, endDate]);
+    }, [selectedPage, startDate, endDate, fetchDataClicked]);
 
     const getAllPagesFunc = async () => {
         const { data } = await getAllPages(pagesRequestBody, selectedSite);
@@ -71,10 +71,12 @@ function Analysis({ setComponent }) {
 
     const handlePageChange = (event) => {
         setSelectedPage(event.target.value);
+        setFetchDataClicked(false)
     };
 
     const handleSiteChange = (event) => {
         setSelectedSite(encodeURIComponent(event.target.value));
+        
     };
 
     console.log(pages.length);
@@ -191,7 +193,6 @@ function Analysis({ setComponent }) {
 
                 </>
             }
-
 
             <div>
                 {fetchDataClicked && <TableOfRecords queryDetails={queryDetails} selectedPage={selectedPage} fetchDataClicked={fetchDataClicked}/>}
