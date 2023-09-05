@@ -90,20 +90,7 @@
     margin-right: 0.5rem;
   }
   
-  .header-dropdown-dashboard {
-    border: none;
-    background-color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    width: 200px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-  }
-  
-  .header-dropdown-dashboard:hover {
-    background-color: #f2f2f2;
-  }
+ 
   
   .header-right-dashboard {
     display: flex;

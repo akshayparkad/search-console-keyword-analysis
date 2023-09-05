@@ -19,6 +19,7 @@ function Analysis({ setComponent }) {
     const [selectedSite, setSelectedSite] = useState("");
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
+    const [selectedDate, setSelectedDates] = useState(false);
 
     const [dataReq, setDataReq] = useState({
         startDate: "2020-06-06",
@@ -108,13 +109,16 @@ function Analysis({ setComponent }) {
         }
     }, []);
 
-    
+    const handleDateChange=(date)=>{
+
+        setEndDate(date.toISOString().slice(0, 10));
+        setSelectedDates(true);
+    }
 
 
     return (
         <div className="inner-component">
-            <h1>Select Site URL</h1>
-
+            <h5>Select Site URL</h5>
             <div className="custom-selectt">
                 <select onChange={handleSiteChange}>
                     <option value="Select a site URL">
@@ -132,7 +136,7 @@ function Analysis({ setComponent }) {
 
             {selectedSite &&
                 <>
-                    <h1>Select Date Range</h1>
+                    <h5>Select Date Range</h5>
 
                     <div className="datepicker-pos">
                         <h6>Start Date</h6>
@@ -146,11 +150,15 @@ function Analysis({ setComponent }) {
                         <DatePicker
                             className="datepicker-lol"
                             value={endDate}
-                            onChange={(date) => setEndDate(date.toISOString().slice(0, 10))}
+                            onChange={(date) => handleDateChange(date)}
                         />
                     </div>
+            </> }
 
-                    <h1>Select Page</h1>
+            { selectedDate &&
+                <>
+                
+                    <h5>Select Page</h5>
 
                     <div className="select-page-css">
                         <div className="custom-selectt">
@@ -171,28 +179,27 @@ function Analysis({ setComponent }) {
                                 </select>
                             </div>
 
+                           
+
                             <button className="authorize-btn" onClick={fetchData}>
                                 Fetch Data
                             </button>
-
-
-                         <div className="youselected">
-                            <div>
+                            <div className="fetch-btn-link">
+                            <div className="youselected">
                                 {selectedPage && (
                                     <p>
-                                        You selected:{" "}
-                                        <a href={selectedPage} target="_blank">
+                                       <div className="youselected">You selected:</div> 
+                                        <a className="border-around-link" href={selectedPage} target="_blank">
                                             {selectedPage}
                                         </a>
                                     </p>
                                 )}
                             </div>
+                            </div>
+                    
                         </div>
-                    </div>
-
-
-                </>
-            }
+                        </>
+                                }
 
             <div>
                 {fetchDataClicked && <TableOfRecords queryDetails={queryDetails} selectedPage={selectedPage} fetchDataClicked={fetchDataClicked}/>}

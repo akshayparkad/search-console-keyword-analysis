@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { scrapWebPage } from "../Service";
 import { MDBDataTable } from 'mdbreact';
 import { useNavigate } from 'react-router-dom';
@@ -8,6 +8,7 @@ function FindKeywords({ selectedPage, queryDetails, setMainTable, mainTable }) {
 
     //  const [scrappedData, setScrappedData] = useState({});
     const [data2, setData2] = useState({});
+    const [btnv, setBtnv] = useState(false);
     const navigate = useNavigate();
 
     const mydata = {
@@ -27,7 +28,7 @@ function FindKeywords({ selectedPage, queryDetails, setMainTable, mainTable }) {
         try {
 
             const response = await scrapWebPage(mydata);
-            
+
             if (response.data.status == 'error') {
                 navigate('/login');
             }
@@ -106,17 +107,24 @@ function FindKeywords({ selectedPage, queryDetails, setMainTable, mainTable }) {
 
     const handleFindKeywords = () => {
         fetchData();
+        setBtnv(true);
         setMainTable(false);
     };
 
 
-
     return (
+
         <div className='magic-keyword-set'>
-            <button className="find-keywords-btn-kw" onClick={handleFindKeywords}>Find Magic Keywords</button>
-           { data2 &&
-                < MDBDataTable bordered small data={data2} />
-           } 
+
+
+            
+            {
+                btnv ? <MDBDataTable bordered small data={data2} /> :<> <button className="find-keywords-btn-kw" onClick={handleFindKeywords}>Find Magic Keywords</button></>
+            }
+
+        
+
+
         </div>
     )
 }

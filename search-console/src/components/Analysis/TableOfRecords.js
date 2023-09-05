@@ -4,7 +4,7 @@ import FindKeywords from "./FindKeywords";
 
 
 
-function TableOfRecords({ queryDetails, selectedPage, fetchDataClicked}) {
+function TableOfRecords({ queryDetails, selectedPage, fetchDataClicked }) {
     const [isLoading, setIsLoading] = useState(true);
     const [mainTable, setMainTable] = useState(true);
 
@@ -67,37 +67,42 @@ function TableOfRecords({ queryDetails, selectedPage, fetchDataClicked}) {
     console.log(queryDetails);
 
     return (
-        <>        
-        <div style={{ position: "relative" }}>
-
-            <div className="table-of-records">Table of Records</div>
-
-            {isLoading ? (
-                <div
-                    className="spinner-border"
-                    role="status"
-                    style={{
-                        position: "absolute",
-                        top: "50%",
-                        left: "50%",
-                    }}
-                >
-                    <span className="sr-only">Loading...</span>
-                </div>
-            ) : (
-                <>
-                    {mainTable &&
-                        <MDBDataTable striped bordered small data={data} />
-                    }
-                </>
-            )}
-                
-
-            
-        </div>
         <>
-        <FindKeywords selectedPage={selectedPage} queryDetails={queryDetails} setMainTable={setMainTable} mainTable={mainTable}/>
-        </>
+            <div style={{ position: "relative"}}>
+
+                <div className="table-of-records">Table of Records</div>
+
+                {isLoading ? (
+                    <div
+                        className="spinner-border"
+                        role="status"
+                        style={{
+                            position: "absolute",
+                            top: "50%",
+                            left: "50%",
+                        }}
+                    >
+                        <span className="sr-only">Loading...</span>
+                    </div>
+                ) : (
+                    <>
+
+                        <>
+                            <FindKeywords selectedPage={selectedPage} queryDetails={queryDetails} setMainTable={setMainTable} mainTable={mainTable} />
+                        </>
+
+                        {mainTable &&
+                            <MDBDataTable striped bordered small data={data} />
+                        }
+
+
+                    </>
+                )}
+
+
+
+            </div>
+
         </>
     );
 }
