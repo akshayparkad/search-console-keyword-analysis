@@ -9,7 +9,10 @@ const cheerio = require("cheerio")
 const axios = require("axios")
 
 
-mongoose.connect('mongodb://localhost:27017/search-console-db')
+//mongoose.connect('mongodb://localhost:27017/search-console-db')
+mongoose.connect('mongodb+srv://akshayparkad:eglkRs2n5md3GcsI@cluster0.vponf1z.mongodb.net/?retryWrites=true&w=majority');
+
+//pass - eglkRs2n5md3GcsI
 
 app.use(cors());
 app.use(express.json());
@@ -54,7 +57,7 @@ app.post('/api/login', async (req, res) => {
         const token = jwt.sign({
             name: req.body.name,
             email: req.body.email,
-        }, 'secret123', { expiresIn: '1h' })
+        }, 'secret123', { expiresIn: '24h' })
 
         return res.json({ status: 'ok', user: {token, name: user.name} });
     } else {
