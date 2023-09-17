@@ -36,39 +36,12 @@ const Login = () => {
   };
 
   return (
-    <div style={{ minHeight: "100vh", minWidth: "700px", height: "auto" }}>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "6fr 6fr",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <div className="signInImage">
-          <div
-            style={{
-              height: "100%",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              color: "white",
-            }}
-          >
-            <h1 style={{ textShadow: "1px 1px #2c3e50" }}>
-              E-Vehicle Charging
-            </h1>
-            <p style={{ fontSize: "18px", textAlign: "center" }}>
-              Join now and track e-vehicle charging station and book your slot in advance!
-            </p>
-          </div>
-        </div>
-        <div>
-          <div className="container-signin">
-            <h1 style={{ textAlign: "center", textShadow: "1px 1px #2c3e50" }}>
+    <div className="main-container">
+      <h1 style={{ textAlign: "center", textShadow: "1px 1px #2c3e50" }}>
               Sign In
             </h1>
+          <div className="container-signin">
+            
             <form onSubmit={handleSubmit}>
              
               <div className="mt-3 d-flex flex-column justify-content-center">
@@ -116,8 +89,6 @@ const Login = () => {
             </form>
           </div>
         </div>
-      </div>
-    </div>
   );
 };
 

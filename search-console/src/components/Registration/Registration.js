@@ -106,111 +106,75 @@ const Registration = () => {
   };
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        minWidth: "700px",
-        height: "auto",
-        alignItems: "center",
-      }}
-    >
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "6fr 6fr",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <div className="RegistrationImage">
-          <div
-            style={{
-              height: "100%",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              color: "white",
-            }}
-          >
-            <h1 style={{ textShadow: "1px 1px #2c3e50" }}>
-              E-Vehicle Charging
-            </h1>
-            <p style={{ fontSize: "18px", textAlign: "center" }}>
-              Join now and track e-vehicle charging station and book your slot
-              in advance!
-            </p>
-          </div>
-        </div>
-        <div>
-          <div className="container-signup">
-            <h1 style={{ textAlign: "center", textShadow: "1px 1px #2c3e50" }}>
-              Create Account
-            </h1>
-            <form onSubmit={handleSubmit}>
-              <div className="mt-1 d-flex flex-column justify-content-center">
-                <label htmlFor="username ">Name</label>
-                <input
-                  name="name"
-                  type="text"
-                  placeholder="Enter Your Name"
-                  onChange={handleChange}
-                  className="form-control shadow-none"
-                />
-              </div>
-              <span className="text-danger">{error.errorName}</span>
-              <div className="mt-3 d-flex flex-column justify-content-center">
-                <label htmlFor="email">Email-Id</label>
-                <input
-                  name="email"
-                  type="email"
-                  placeholder="Enter Your Email-Id"
-                  onChange={handleChange}
-                  className="form-control shadow-none"
-                />
-              </div>
-              <span className="text-danger">{error.errorEmail}</span>
 
-              <div className="mt-3 d-flex flex-column justify-content-center">
-                <label htmlFor="password">Password</label>
-                <input
-                  name="password"
-                  type="password"
-                  placeholder="Enter Your Password"
-                  onChange={handleChange}
-                  className="form-control shadow-none"
-                />
-              </div>
-              <span className="text-danger">{error.errorPassword}</span>
-              <div className="mt-3 d-flex flex-column justify-content-center">
-                <label htmlFor="repass">Confirm Password</label>
-                <input
-                  name="confirmPassword"
-                  type="password"
-                  placeholder="Confirm your password"
-                  onChange={handleChange}
-                  className="form-control shadow-none"
-                />
-              </div>
-              <span className="text-danger">{error.errorRePassword}</span>
-              <p className="login-link-signup">
-                Already have an account? <Link to="/login"> Sign In </Link>
-              </p>
-              <div id="fail-box-1"></div>
-              <div className="w-100 d-flex justify-content-center align-items-center mt-3">
-                <button
-                  type="submit"
-                  style={{ backgroundColor: "green", color: "white" }}
-                  id="signbtn"
-                  className="btn w-50"
-                >
-                  Register
-                </button>
-              </div>
-            </form>
-          </div>
+    <div className="main-container">  
+    <h1 style={{ textAlign: "center", textShadow: "1px 1px #2c3e50"}}>
+        Create Account
+      </h1>
+     <div className="container-signup">
+      
+      <form onSubmit={handleSubmit}>
+        <div className="mt-1 d-flex flex-column justify-content-center">
+          <label htmlFor="username ">Name</label>
+          <input
+            name="name"
+            type="text"
+            placeholder="Enter Your Name"
+            onChange={handleChange}
+            className="form-control shadow-none"
+          />
         </div>
-      </div>
+        <span className="text-danger">{error.errorName}</span>
+        <div className="mt-3 d-flex flex-column justify-content-center">
+          <label htmlFor="email">Email-Id</label>
+          <input
+            name="email"
+            type="email"
+            placeholder="Enter Your Email-Id"
+            onChange={handleChange}
+            className="form-control shadow-none"
+          />
+        </div>
+        <span className="text-danger">{error.errorEmail}</span>
+
+        <div className="mt-3 d-flex flex-column justify-content-center">
+          <label htmlFor="password">Password</label>
+          <input
+            name="password"
+            type="password"
+            placeholder="Enter Your Password"
+            onChange={handleChange}
+            className="form-control shadow-none"
+          />
+        </div>
+        <span className="text-danger">{error.errorPassword}</span>
+        <div className="mt-3 d-flex flex-column justify-content-center">
+          <label htmlFor="repass">Confirm Password</label>
+          <input
+            name="confirmPassword"
+            type="password"
+            placeholder="Confirm your password"
+            onChange={handleChange}
+            className="form-control shadow-none"
+          />
+        </div>
+        <span className="text-danger">{error.errorRePassword}</span>
+        <p className="login-link-signup">
+          Already have an account? <Link to="/login"> Sign In </Link>
+        </p>
+        <div id="fail-box-1"></div>
+        <div className="w-100 d-flex justify-content-center align-items-center mt-3">
+          <button
+            type="submit"
+            style={{ backgroundColor: "green", color: "white" }}
+            id="signbtn"
+            className="btn w-50"
+          >
+            Register
+          </button>
+        </div>
+      </form>
+    </div>
     </div>
   );
 };
